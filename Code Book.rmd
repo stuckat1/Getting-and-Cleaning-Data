@@ -17,9 +17,8 @@ The following are numerous mean measurments for a specific *subject* and *activi
 1. Variables beginning with the letter 't' indicates time domain while the letter 'f' indicates fequency domain.  
 2. Acceleration information can be decomposed into body and gravity sub components, 'BodyAcc' and 'GravityAcc', respectively.  
 3. Gyroscopic information is indicated by 'Gyro'.
-4. 'Mean' or 'Std' indicates mean or standard deviation, respecitvely, of the data collected.
+4. 'Mean' is mean value.  'Std' is standard deviation.  'MeanFreq' is weighted average of the frequency components to obtain a mean frequency.
 5. 'X', 'Y', 'Z' indicates axis of the measurement.  
-6. Jerk.  Qué?
 
 All features have been normalized and bounded within [-1, 1].
 
