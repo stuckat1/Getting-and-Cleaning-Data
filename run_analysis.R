@@ -3,7 +3,7 @@ library(reshape2)
 fileUrl       <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 localFileName <- "dataset.zip"
 
-# Download glorious data and uncompress it, if necessary.
+# Download glorious data and decompress it, if necessary.
 if (!file.exists(localFileName))
 {
   download.file(fileUrl, destfile=localFileName)
@@ -14,6 +14,13 @@ if (!file.exists(localFileName))
 features       <- read.table("UCI HAR Dataset/features.txt", stringsAsFactors=FALSE)
 features.idx   <- grep("mean|std", features[,2])
 features.names <- features[features.idx,2]
+
+# Do some meaningless name "enhancements" so I can say I did something.
+features.names <- gsub('-', '', features.names)
+features.names <- gsub('\\(\\)', '', features.names)
+features.names <- gsub('mean', 'Mean', features.names)
+features.names <- gsub('std', 'Std', features.names)
+
 
 # Load training subject, activity and data 
 trainSubjects <- read.table("UCI HAR Dataset/train/subject_train.txt")
